@@ -1,0 +1,8 @@
+numpy
+h5py
+tensorflow==1.5
+keras
+jupyter
+Flask
+requests
+tweepy

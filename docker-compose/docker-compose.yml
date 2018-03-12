@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+#  webui:
+#    container_name: webui
+#    image: nathancooper/vcdep:webui
+#    build:
+#      context: ../
+#      dockerfile: ./webui-ms/Dockerfile.development
+#    volumes:
+#      - ../webui-ms:/home/webui/
+
+  deep_feels:
+    container_name: deep_feels
+    build:
+      context: ../
+      dockerfile: ./deep_feels/Dockerfile
+
+  reverse_proxy:
+    container_name: reverse_proxy
+    build:
+      context: ../
+      dockerfile: ./reverse_proxy/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - deep_feels
